@@ -1,0 +1,8 @@
+{
+  "name": "wec-front-web-layout",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/wecfin/wec-front-web-layout",
+  "author": "zhanjh <zhanjh@126.com>",
+  "license": "MIT"
+}
