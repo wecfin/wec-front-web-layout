@@ -5,7 +5,7 @@ export class SidebarView {
         this.data = data;
         this.selectedMenu = {};
         this.routerParams = {};
-        this.webHandler = this.data.webHandler;
+        this.core = this.data.core;
 
         this.ctn = document.createElement('div');
         this.ctn.addClass('wec-sidebar');
@@ -52,7 +52,7 @@ export class SidebarView {
     }
 
     getFrontUrl(app, basePath, companyCode) {
-        const localAppSetting = this.webHandler.setting.app[app.appCode];
+        const localAppSetting = this.core.setting.app[app.appCode];
         const frontSetting = localAppSetting && localAppSetting.site && localAppSetting.site.front;
         if (frontSetting && frontSetting.baseUrl) {
             return '//' + frontSetting.baseUrl + '/c/' + companyCode;
