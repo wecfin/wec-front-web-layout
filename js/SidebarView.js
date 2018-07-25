@@ -28,7 +28,6 @@ export class SidebarView {
     }
 
     createMenuItem(app, navItems) {
-        let appName = app.appName;
         let isCurrentApp = this.data.currentAppCode == app.appCode;
         //let url = '//' + app.baseUrl + this.data.basePath + '/c/' + this.routerParams.companyCode + '?idToken=' + this.data.idToken || '';
         const url = this.getFrontUrl(app, this.data.basePath, this.routerParams.companyCode);
@@ -37,8 +36,8 @@ export class SidebarView {
         li.addClass(`wec-menu-item ${isCurrentApp ? 'active menu-expanded' : ''}`);
         li.html`
             <a class="wec-menu-title" href=${isCurrentApp? 'javascript:;' : url}>
-                <i class="icon icon-${appIcon}"></i>
-                ${appName}
+                <i class="icon icon-${app.appIcon}"></i>
+                ${app.appName}
             </a>
             <ul class="wec-submenu"></ul>
         `;
@@ -66,7 +65,7 @@ export class SidebarView {
 
         navItems.forEach(obj => {
             let li = document.createElement('li');
-            li.addClass(`wec-submenu-item submenu-${obj.name} ${(obj.name === this.selectedSubmenu) ? 'active' : ''}`);
+            li.addClass(`wec-submenu-item submenu-${obj.title} ${(obj.title == this.selectedSubmenu) ? 'active' : ''}`);
             li.html`<a href="javascript:;">${obj.name}</a>`;
 
             let anchor = li.oneElem('a');
