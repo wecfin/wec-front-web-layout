@@ -37,7 +37,7 @@ export class SidebarView {
         li.addClass(`wec-menu-item ${isCurrentApp ? 'active menu-expanded' : ''}`);
         li.html`
             <a class="wec-menu-title" href=${isCurrentApp? 'javascript:;' : url}>
-                <i class="icon icon-${appName}"></i>
+                <i class="icon icon-${appIcon}"></i>
                 ${appName}
             </a>
             <ul class="wec-submenu"></ul>
